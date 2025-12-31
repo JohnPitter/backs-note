@@ -60,11 +60,13 @@ npm run preview
 
 ## 🔐 Configuração do Firebase
 
+**⚠️ IMPORTANTE:** Siga o guia completo em [FIREBASE_SETUP.md](./FIREBASE_SETUP.md) para evitar erros de permissão.
+
+Passos rápidos:
 1. Crie um projeto no [Firebase Console](https://console.firebase.google.com)
 2. Ative o Firestore Database
-3. Ative o Firebase Hosting
-4. Copie as credenciais do Firebase para o arquivo `.env.local`
-5. Configure as regras de segurança do Firestore (já incluídas em `firestore.rules`)
+3. **CRITICAL:** Deploy das security rules: `firebase deploy --only firestore:rules`
+4. Copie as credenciais para `.env.local`
 
 ### Variáveis de Ambiente
 
@@ -156,9 +158,10 @@ npm run test:run
 
 ## 📖 Documentação
 
+- [FIREBASE_SETUP.md](./FIREBASE_SETUP.md) - **⚡ Guia completo de configuração do Firebase**
+- [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) - Resolução de problemas comuns
 - [CLAUDE.md](./CLAUDE.md) - Princípios de desenvolvimento e arquitetura
 - [CHANGELOG.md](./CHANGELOG.md) - Histórico de mudanças
-- [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) - Guia de resolução de problemas
 
 ## 📄 Licença
 

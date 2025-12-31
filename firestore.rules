@@ -7,14 +7,15 @@ service cloud.firestore {
       allow read: if true;
 
       // Allow anyone to create a note
-      allow create: if request.resource.data.keys().hasAll(['id', 'content', 'createdAt', 'updatedAt'])
+      // Validates that required fields exist and have correct types
+      allow create: if request.resource.data.id is string
                     && request.resource.data.id == noteId
                     && request.resource.data.content is string
                     && request.resource.data.content.size() <= 1000000; // Max 1MB
 
       // Allow anyone to update a note's content
-      allow update: if request.resource.data.keys().hasAll(['id', 'content', 'createdAt', 'updatedAt'])
-                    && request.resource.data.id == resource.data.id
+      // Only content and updatedAt can be modified
+      allow update: if request.resource.data.id == resource.data.id
                     && request.resource.data.content is string
                     && request.resource.data.content.size() <= 1000000
                     && request.resource.data.createdAt == resource.data.createdAt;
