@@ -156,9 +156,9 @@ npm run test:run
 
 ## 📖 Documentação
 
-Veja o arquivo [CLAUDE.md](./CLAUDE.md) para detalhes sobre os princípios de desenvolvimento e arquitetura do projeto.
-
-Veja o arquivo [CHANGELOG.md](./CHANGELOG.md) para histórico de mudanças.
+- [CLAUDE.md](./CLAUDE.md) - Princípios de desenvolvimento e arquitetura
+- [CHANGELOG.md](./CHANGELOG.md) - Histórico de mudanças
+- [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) - Guia de resolução de problemas
 
 ## 📄 Licença
 
