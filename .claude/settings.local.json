@@ -12,7 +12,8 @@
       "Bash(git push:*)",
       "Bash(gh run list:*)",
       "Bash(gh run view:*)",
-      "Bash(git commit -m \"$(cat <<''EOF''\nfix: ajustar workflow para permitir build sem deploy\n\n- Adicionar step de testes no CI\n- Tornar deploy opcional quando FIREBASE_SERVICE_ACCOUNT não está configurado\n- Melhorar documentação dos secrets necessários no README\n- Workflow agora executa build e testes mesmo sem secrets de deploy\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+      "Bash(git commit -m \"$(cat <<''EOF''\nfix: ajustar workflow para permitir build sem deploy\n\n- Adicionar step de testes no CI\n- Tornar deploy opcional quando FIREBASE_SERVICE_ACCOUNT não está configurado\n- Melhorar documentação dos secrets necessários no README\n- Workflow agora executa build e testes mesmo sem secrets de deploy\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
