@@ -7,7 +7,12 @@
       "Bash(npm run lint)",
       "Bash(npm run test:run:*)",
       "Bash(npm run build:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: implementação completa do Backs Note v1.0.0\n\n- Aplicação React + TypeScript com Vite\n- Integração Firebase Firestore para armazenamento em tempo real\n- Integração Firebase Analytics para rastreamento de uso\n- Geração de IDs únicos com nanoid\n- Sistema de cache local com LocalStorage para resiliência\n- Editor de notas com auto-save debounced (500ms)\n- Design moderno com tema dark e gradientes\n- Responsivo para mobile e desktop\n- Testes unitários com Vitest\n- GitHub Actions para CI/CD\n- Firestore security rules\n- Logging e observabilidade\n- Clean Architecture\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)",
+      "Bash(gh run list:*)",
+      "Bash(gh run view:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfix: ajustar workflow para permitir build sem deploy\n\n- Adicionar step de testes no CI\n- Tornar deploy opcional quando FIREBASE_SERVICE_ACCOUNT não está configurado\n- Melhorar documentação dos secrets necessários no README\n- Workflow agora executa build e testes mesmo sem secrets de deploy\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
     ],
     "deny": [],
     "ask": []

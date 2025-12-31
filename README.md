@@ -83,15 +83,22 @@ O projeto está configurado para deploy automático via GitHub Actions.
 
 ### Configuração do GitHub Secrets
 
-Adicione os seguintes secrets no seu repositório GitHub:
+Para habilitar o deploy automático, adicione os seguintes secrets no seu repositório GitHub (Settings > Secrets and variables > Actions):
 
-- `VITE_FIREBASE_API_KEY`
-- `VITE_FIREBASE_AUTH_DOMAIN`
-- `VITE_FIREBASE_PROJECT_ID`
-- `VITE_FIREBASE_STORAGE_BUCKET`
-- `VITE_FIREBASE_MESSAGING_SENDER_ID`
-- `VITE_FIREBASE_APP_ID`
-- `FIREBASE_SERVICE_ACCOUNT` (JSON da service account do Firebase)
+**Obrigatórios para Build:**
+- `VITE_FIREBASE_API_KEY` - API key do Firebase
+- `VITE_FIREBASE_AUTH_DOMAIN` - Auth domain (ex: projeto-id.firebaseapp.com)
+- `VITE_FIREBASE_PROJECT_ID` - ID do projeto Firebase
+- `VITE_FIREBASE_STORAGE_BUCKET` - Storage bucket (ex: projeto-id.appspot.com)
+- `VITE_FIREBASE_MESSAGING_SENDER_ID` - Sender ID
+- `VITE_FIREBASE_APP_ID` - App ID
+- `VITE_FIREBASE_MEASUREMENT_ID` - Measurement ID para Analytics (opcional)
+
+**Obrigatório para Deploy:**
+- `FIREBASE_SERVICE_ACCOUNT` - JSON completo da service account do Firebase
+  - Para obter: Firebase Console > Project Settings > Service Accounts > Generate New Private Key
+
+**Nota:** Se o `FIREBASE_SERVICE_ACCOUNT` não estiver configurado, o workflow executará o build e testes, mas pulará o deploy.
 
 ### Deploy Manual
 
