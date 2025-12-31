@@ -66,38 +66,51 @@ export const useNote = (noteId: string | null): UseNoteReturn => {
 
     const initializeNote = async () => {
       try {
+        logger.info('Initializing note', { noteId });
         setLoading(true);
         setError(null);
 
+        logger.debug('Checking cache for note', { noteId });
         const cachedNote = cacheService.getNote(noteId);
         if (cachedNote) {
+          logger.info('Note found in cache', { noteId });
           setNote(cachedNote);
           setLoading(false);
         }
 
+        logger.debug('Fetching note from Firestore', { noteId });
         const existingNote = await getNote(noteId);
 
         if (!existingNote) {
+          logger.info('Note does not exist, creating new note', { noteId });
           await createNote(noteId);
+        } else {
+          logger.info('Note found in Firestore', { noteId });
         }
 
+        logger.debug('Setting up real-time subscription', { noteId });
         unsubscribe = subscribeToNote(
           noteId,
           (updatedNote) => {
+            logger.debug('Note updated via subscription', { noteId, contentLength: updatedNote.content.length });
             setNote(updatedNote);
             cacheService.saveNote(noteId, updatedNote);
             setLoading(false);
           },
           (err) => {
-            setError('Erro ao sincronizar nota');
+            const message = 'Erro ao sincronizar nota';
+            setError(message);
             setLoading(false);
-            logger.error('Subscription error', { error: err });
+            logger.error(message, { noteId, error: err });
           }
         );
+
+        logger.info('Note initialization complete', { noteId });
       } catch (err) {
-        setError('Erro ao carregar nota');
+        const message = 'Erro ao carregar nota';
+        setError(message);
         setLoading(false);
-        logger.error('Failed to initialize note', { error: err });
+        logger.error('Failed to initialize note', { noteId, error: err });
       }
     };
 
