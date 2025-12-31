@@ -10,6 +10,7 @@ import {
 import { getDb } from './firebase';
 import type { Note } from '../types';
 import { logger } from '../utils/logger';
+import { encrypt, decrypt } from './cryptoService';
 
 const COLLECTION_NAME = 'notes';
 
@@ -18,9 +19,11 @@ export const createNote = async (id: string, content: string = ''): Promise<void
     const db = getDb();
     const noteRef = doc(db, COLLECTION_NAME, id);
 
+    const encryptedContent = await encrypt(content);
+
     const noteData = {
       id,
-      content,
+      content: encryptedContent,
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp()
     };
@@ -45,9 +48,11 @@ export const getNote = async (id: string): Promise<Note | null> => {
     }
 
     const data = noteSnap.data();
+    const decryptedContent = await decrypt(data.content || '');
+
     return {
       id: data.id,
-      content: data.content,
+      content: decryptedContent,
       createdAt: data.createdAt?.toMillis() || Date.now(),
       updatedAt: data.updatedAt?.toMillis() || Date.now()
     };
@@ -62,8 +67,10 @@ export const updateNote = async (id: string, content: string): Promise<void> => 
     const db = getDb();
     const noteRef = doc(db, COLLECTION_NAME, id);
 
+    const encryptedContent = await encrypt(content);
+
     await updateDoc(noteRef, {
-      content,
+      content: encryptedContent,
       updatedAt: serverTimestamp()
     });
 
@@ -85,12 +92,13 @@ export const subscribeToNote = (
 
     return onSnapshot(
       noteRef,
-      (snapshot) => {
+      async (snapshot) => {
         if (snapshot.exists()) {
           const data = snapshot.data();
+          const decryptedContent = await decrypt(data.content || '');
           const note: Note = {
             id: data.id,
-            content: data.content,
+            content: decryptedContent,
             createdAt: data.createdAt?.toMillis() || Date.now(),
             updatedAt: data.updatedAt?.toMillis() || Date.now()
           };

@@ -31,12 +31,22 @@ This is a new repository with minimal setup. No package manager, build tools, or
 
 ### Environment Variables
 Environment variables are stored in GitHub Secrets and injected during deployment:
-- `REACT_APP_FIREBASE_API_KEY`
-- `REACT_APP_FIREBASE_AUTH_DOMAIN`
-- `REACT_APP_FIREBASE_PROJECT_ID`
-- `REACT_APP_FIREBASE_STORAGE_BUCKET`
-- `REACT_APP_FIREBASE_MESSAGING_SENDER_ID`
-- `REACT_APP_FIREBASE_APP_ID`
+- `VITE_FIREBASE_API_KEY`
+- `VITE_FIREBASE_AUTH_DOMAIN`
+- `VITE_FIREBASE_PROJECT_ID`
+- `VITE_FIREBASE_STORAGE_BUCKET`
+- `VITE_FIREBASE_MESSAGING_SENDER_ID`
+- `VITE_FIREBASE_APP_ID`
+- `VITE_FIREBASE_MEASUREMENT_ID` (optional)
+- `VITE_ENCRYPTION_KEY` - AES-256 encryption key (64 hex characters)
+- `VITE_LOG_LEVEL` - Logging level (debug | info | warn | error | none)
+
+### Encryption
+Note content is encrypted using AES-256-GCM before being stored in Firestore:
+- Algorithm: AES-GCM with 256-bit key
+- IV: 12 bytes, randomly generated per encryption
+- Format: `{base64(iv)}:{base64(ciphertext)}`
+- Key: Must be 64 hex characters (256 bits), stored in GitHub Secrets
 
 ### Local Development
 For local development, create a `.env.local` file (not committed to git) with the Firebase configuration variables.

@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2025-12-31
+
+### Added
+- End-to-end encryption for note content using AES-256-GCM
+- Encryption key stored in GitHub Secrets (VITE_ENCRYPTION_KEY)
+- cryptoService.ts with encrypt/decrypt functions
+- Unit tests for encryption functionality
+- Backward compatibility with unencrypted legacy data
+
+### Security
+- Note content is encrypted before being stored in Firestore
+- Each encryption uses a random 12-byte IV
+- 256-bit AES key in hexadecimal format (64 characters)
+- Encryption key never exposed in client code (injected at build time)
+
 ## [1.0.0] - 2025-12-31
 
 ### Added
