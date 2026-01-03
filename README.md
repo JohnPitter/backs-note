@@ -95,6 +95,7 @@ Para habilitar o deploy automático, adicione os seguintes secrets no seu reposi
 - `VITE_FIREBASE_MESSAGING_SENDER_ID` - Sender ID
 - `VITE_FIREBASE_APP_ID` - App ID
 - `VITE_FIREBASE_MEASUREMENT_ID` - Measurement ID para Analytics (opcional)
+- `VITE_ENCRYPTION_KEY` - Chave AES-256 em hex (64 caracteres). Gerar com: `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`
 
 **Obrigatório para Deploy:**
 - `FIREBASE_SERVICE_ACCOUNT` - JSON completo da service account do Firebase
