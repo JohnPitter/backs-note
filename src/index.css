@@ -1236,9 +1236,23 @@ code {
 }
 
 .language-flag {
-  font-size: 1.35rem;
-  line-height: 1;
-  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-flag svg,
+.flag-icon svg {
+  width: 1.5rem;
+  height: 1.125rem;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.flag-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .language-code {

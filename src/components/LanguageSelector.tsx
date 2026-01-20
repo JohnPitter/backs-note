@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { languages, type LanguageCode } from '../i18n';
+import { FlagIcon } from './FlagIcon';
 
 export const LanguageSelector: React.FC = () => {
   const { i18n } = useTranslation();
@@ -38,7 +39,7 @@ export const LanguageSelector: React.FC = () => {
         aria-label="Select language"
         aria-expanded={isOpen}
       >
-        <span className="language-flag">{currentLanguage.flag}</span>
+        <FlagIcon code={currentLanguage.code} className="language-flag" />
         <span className="language-code">{currentLanguage.code.toUpperCase()}</span>
         <span className="language-arrow">{isOpen ? '▲' : '▼'}</span>
       </button>
@@ -51,7 +52,7 @@ export const LanguageSelector: React.FC = () => {
               className={`language-option ${lang.code === i18n.language ? 'is-active' : ''}`}
               onClick={() => handleLanguageChange(lang.code)}
             >
-              <span className="language-flag">{lang.flag}</span>
+              <FlagIcon code={lang.code} className="language-flag" />
               <span className="language-name">{lang.name}</span>
             </button>
           ))}
