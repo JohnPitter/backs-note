@@ -73,32 +73,30 @@ export const Home: React.FC = () => {
             <span>{t('common.or')}</span>
           </div>
 
-          <div className="action-card">
-            <h2>{t('home.accessNote.title')}</h2>
-            <p>{t('home.accessNote.description')}</p>
-            <div className="input-group">
-              <input
-                type="text"
-                className="input-text"
-                placeholder={t('home.accessNote.placeholder')}
-                value={noteId}
-                onChange={handleInputChange}
-                onKeyPress={handleKeyPress}
-                aria-label={t('home.accessNote.placeholder')}
-              />
-              <button className="btn btn-secondary" onClick={handleAccessExisting}>
-                {t('home.accessNote.button')}
-              </button>
+          <div className="action-cards-row">
+            <div className="action-card">
+              <h2>{t('home.accessNote.title')}</h2>
+              <p>{t('home.accessNote.description')}</p>
+              <div className="input-group">
+                <input
+                  type="text"
+                  className="input-text"
+                  placeholder={t('home.accessNote.placeholder')}
+                  value={noteId}
+                  onChange={handleInputChange}
+                  onKeyPress={handleKeyPress}
+                  aria-label={t('home.accessNote.placeholder')}
+                />
+                <button className="btn btn-secondary" onClick={handleAccessExisting}>
+                  {t('home.accessNote.button')}
+                </button>
+              </div>
+              {error && <p className="input-error">{error}</p>}
             </div>
-            {error && <p className="input-error">{error}</p>}
-          </div>
 
-          <div className="divider">
-            <span>{t('common.or')}</span>
-          </div>
-
-          <div className="action-card">
-            <AliasAccessForm />
+            <div className="action-card">
+              <AliasAccessForm />
+            </div>
           </div>
         </div>
 
