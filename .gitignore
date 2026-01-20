@@ -36,4 +36,10 @@ firestore-debug.log
 
 # Claude Code (local only)
 .claude/
+
+# Documentation (local only)
 CLAUDE.md
+README.md
+CHANGELOG.md
+FIREBASE_SETUP.md
+TROUBLESHOOTING.md
