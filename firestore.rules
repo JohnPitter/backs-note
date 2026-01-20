@@ -23,5 +23,39 @@ service cloud.firestore {
       // Don't allow deletes
       allow delete: if false;
     }
+
+    // Security rules for aliases collection
+    match /aliases/{aliasId} {
+      // Allow anyone to read aliases (needed to check if alias exists and verify PIN)
+      allow read: if true;
+
+      // Allow anyone to create an alias
+      // Validates required fields and format
+      allow create: if request.resource.data.alias is string
+                    && request.resource.data.alias == aliasId
+                    && request.resource.data.alias.size() >= 3
+                    && request.resource.data.alias.size() <= 30
+                    && request.resource.data.noteId is string
+                    && request.resource.data.noteId.size() == 10
+                    && request.resource.data.pinHash is string
+                    && request.resource.data.pinHash.size() == 64
+                    && request.resource.data.pinSalt is string
+                    && request.resource.data.pinSalt.size() == 32
+                    && request.resource.data.failedAttempts == 0;
+
+      // Allow updates only for failedAttempts and lastFailedAttempt (rate limiting)
+      // Cannot modify alias, noteId, pinHash, pinSalt, or createdAt
+      allow update: if request.resource.data.alias == resource.data.alias
+                    && request.resource.data.noteId == resource.data.noteId
+                    && request.resource.data.pinHash == resource.data.pinHash
+                    && request.resource.data.pinSalt == resource.data.pinSalt
+                    && request.resource.data.createdAt == resource.data.createdAt
+                    && request.resource.data.failedAttempts is int
+                    && request.resource.data.failedAttempts >= 0
+                    && request.resource.data.failedAttempts <= 10;
+
+      // Don't allow deletes
+      allow delete: if false;
+    }
   }
 }

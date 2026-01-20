@@ -14,3 +14,21 @@ export interface FirebaseConfig {
   appId: string;
   measurementId?: string;
 }
+
+export interface AliasDocument {
+  alias: string;
+  noteId: string;
+  pinHash: string;
+  pinSalt: string;
+  failedAttempts: number;
+  lastFailedAttempt: number | null;
+  createdAt: number;
+}
+
+export interface AliasVerifyResult {
+  success: boolean;
+  noteId?: string;
+  error?: string;
+  remainingAttempts?: number;
+  lockoutUntil?: number;
+}

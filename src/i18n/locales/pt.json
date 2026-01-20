@@ -1,0 +1,97 @@
+{
+  "common": {
+    "appName": "Backs Note",
+    "loading": "Carregando...",
+    "error": "Erro",
+    "close": "Fechar",
+    "cancel": "Cancelar",
+    "access": "Acessar",
+    "create": "Criar",
+    "or": "ou"
+  },
+  "home": {
+    "subtitle": "Notepad online para registro rápido de notas",
+    "newNote": {
+      "title": "Nova Nota",
+      "description": "Crie uma nova nota com um ID único",
+      "button": "Criar Nova Nota"
+    },
+    "accessNote": {
+      "title": "Acessar Nota Existente",
+      "description": "Insira o ID de uma nota existente",
+      "placeholder": "ID da nota",
+      "button": "Acessar"
+    },
+    "footer": "Suas notas são armazenadas de forma segura e acessíveis de qualquer lugar"
+  },
+  "note": {
+    "backToHome": "Home",
+    "createAlias": "Criar Alias",
+    "copyId": "Copiar ID",
+    "idCopied": "ID copiado para a área de transferência!",
+    "copyError": "Erro ao copiar ID",
+    "loading": "Carregando...",
+    "synced": "Sincronizado",
+    "lastUpdate": "Última atualização",
+    "invalidId": "ID de nota inválido"
+  },
+  "alias": {
+    "accessTitle": "Acessar via Alias",
+    "accessDescription": "Use um alias e PIN para acessar sua nota",
+    "aliasPlaceholder": "Digite o alias",
+    "pinPlaceholder": "Digite o PIN",
+    "verifying": "Verificando...",
+    "createTitle": "Criar Alias",
+    "createSuccess": "Alias Criado!",
+    "createDescription": "Crie um nome fácil de lembrar para acessar esta nota. O acesso será protegido por um PIN de 4-6 dígitos.",
+    "aliasLabel": "Alias",
+    "aliasExample": "ex: lista-compras",
+    "aliasHint": "3-30 caracteres: letras minúsculas, números e hífens",
+    "pinLabel": "PIN",
+    "pinDigits": "4-6 dígitos",
+    "confirmPinLabel": "Confirmar PIN",
+    "confirmPinPlaceholder": "Repita o PIN",
+    "creating": "Criando...",
+    "createButton": "Criar Alias",
+    "successMessage": "Alias criado com sucesso!",
+    "successInfo": "Agora você pode acessar esta nota usando:",
+    "successHint": "Use o alias e o PIN na página inicial para acessar a nota.",
+    "waitMessage": "Aguarde {{minutes}} minuto(s) para tentar novamente."
+  },
+  "errors": {
+    "enterNoteId": "Por favor, insira um ID de nota",
+    "invalidNoteId": "ID de nota inválido",
+    "enterAlias": "Digite o alias da nota.",
+    "enterPin": "Digite o PIN.",
+    "verifyError": "Erro ao verificar PIN.",
+    "accessError": "Erro ao acessar nota. Tente novamente.",
+    "enterAliasForNote": "Digite um alias para a nota.",
+    "invalidAlias": "Alias inválido. Use 3-30 caracteres: letras minúsculas, números e hífens.",
+    "enterPinForAlias": "Digite um PIN.",
+    "invalidPin": "PIN inválido. Use 4 a 6 dígitos.",
+    "pinsDontMatch": "Os PINs não coincidem.",
+    "aliasInUse": "Este alias já está em uso. Escolha outro nome.",
+    "aliasCheckError": "Erro ao verificar disponibilidade do alias.",
+    "createAliasError": "Erro ao criar alias.",
+    "initError": "Erro ao inicializar aplicação. Verifique a configuração do Firebase."
+  },
+  "editor": {
+    "placeholder": "Comece a escrever suas notas aqui...",
+    "bold": "Negrito (Ctrl+B)",
+    "italic": "Itálico (Ctrl+I)",
+    "underline": "Sublinhado (Ctrl+U)",
+    "bulletList": "Lista com marcadores",
+    "orderedList": "Lista numerada",
+    "undo": "Desfazer (Ctrl+Z)",
+    "redo": "Refazer (Ctrl+Y)"
+  },
+  "loading": {
+    "note": "Carregando nota..."
+  },
+  "language": {
+    "select": "Idioma",
+    "pt": "Português",
+    "en": "English",
+    "es": "Español"
+  }
+}
