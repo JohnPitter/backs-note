@@ -22,6 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.playwright-mcp
 
 # Environment variables
 .env
@@ -39,7 +40,6 @@ firestore-debug.log
 
 # Documentation (local only)
 CLAUDE.md
-README.md
 CHANGELOG.md
 FIREBASE_SETUP.md
 TROUBLESHOOTING.md
