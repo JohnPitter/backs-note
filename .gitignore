@@ -33,3 +33,7 @@ dist-ssr
 .firebaserc
 firebase-debug.log
 firestore-debug.log
+
+# Claude Code (local only)
+.claude/
+CLAUDE.md
