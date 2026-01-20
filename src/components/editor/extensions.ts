@@ -1,5 +1,4 @@
 import StarterKit from '@tiptap/starter-kit';
-import Underline from '@tiptap/extension-underline';
 
 export const editorExtensions = [
   StarterKit.configure({
@@ -9,8 +8,7 @@ export const editorExtensions = [
     blockquote: false,
     horizontalRule: false,
     heading: false,
-    // These are enabled by default, just documenting what we use:
-    // bold, italic, bulletList, orderedList, listItem, history, paragraph, hardBreak
+    // These are enabled by default in StarterKit 3.16+:
+    // bold, italic, underline, bulletList, orderedList, listItem, history, paragraph, hardBreak
   }),
-  Underline,
 ];
