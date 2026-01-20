@@ -93,5 +93,8 @@
     "pt": "Português",
     "en": "English",
     "es": "Español"
+  },
+  "ads": {
+    "label": "Publicidade"
   }
 }

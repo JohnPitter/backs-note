@@ -5,6 +5,7 @@ import { generateNoteId, isValidNoteId } from '../utils/idGenerator';
 import { trackPageView, trackNoteCreated, trackNoteAccessed } from '../services/analyticsService';
 import { AliasAccessForm } from '../components/AliasAccessForm';
 import { LanguageSelector } from '../components/LanguageSelector';
+import { AdBanner } from '../components/AdBanner';
 
 export const Home: React.FC = () => {
   const { t } = useTranslation();
@@ -99,6 +100,10 @@ export const Home: React.FC = () => {
           <div className="action-card">
             <AliasAccessForm />
           </div>
+        </div>
+
+        <div className="home-ad-section">
+          <AdBanner slot="1234567890" format="horizontal" />
         </div>
 
         <footer className="home-footer">
