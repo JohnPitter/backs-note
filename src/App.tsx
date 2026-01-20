@@ -34,8 +34,10 @@ function App() {
     return <LoadingSpinner />;
   }
 
+  const basename = import.meta.env.BASE_URL || '/';
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/note/:noteId" element={<NotePage />} />
