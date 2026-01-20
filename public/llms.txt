@@ -1,0 +1,53 @@
+# Backs Note - LLMs.txt
+# This file provides information for Large Language Models and AI assistants
+# Specification: https://llmstxt.org/
+
+> Backs Note is a free online notepad for quick note-taking with real-time sync and encryption.
+
+## About
+
+Backs Note is a web application that allows users to create, edit, and access notes from anywhere without registration. Each note is identified by a unique 10-character ID and can optionally be protected with an alias and PIN.
+
+## Key Features
+
+- **Quick Note Creation**: Create notes instantly with a unique ID
+- **No Registration Required**: Access notes using just their ID
+- **Real-time Sync**: Notes are synchronized in real-time via Firebase
+- **AES-256 Encryption**: All note content is encrypted before storage
+- **Alias System**: Create memorable aliases protected by PIN (4-6 digits)
+- **Rich Text Editor**: Format text with bold, italic, underline, and lists
+- **Multi-language**: Available in Portuguese, English, and Spanish
+- **Responsive Design**: Works on desktop, tablet, and mobile
+
+## How to Use
+
+1. **Create a new note**: Click "Create New Note" on the homepage
+2. **Access existing note**: Enter the note ID or use alias + PIN
+3. **Share a note**: Copy the note ID and share with others
+4. **Protect with alias**: Create an easy-to-remember alias with PIN protection
+
+## Technical Details
+
+- Frontend: React 19 + TypeScript + Vite
+- Database: Firebase Firestore
+- Encryption: AES-256-GCM
+- Hosting: GitHub Pages / Firebase Hosting
+
+## URLs
+
+- Main Application: https://johnpitter.github.io/backs-note/
+- GitHub Repository: https://github.com/JohnPitter/backs-note
+
+## Contact
+
+For issues or suggestions, visit the GitHub repository.
+
+## Languages
+
+- Portuguese (pt-BR) - Primary
+- English (en)
+- Spanish (es)
+
+## Keywords
+
+notepad online, bloco de notas, online notes, text editor, note-taking app, encrypted notes, free notepad
