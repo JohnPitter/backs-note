@@ -1,21 +1,20 @@
-# Backs Note
-
 <div align="center">
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6?style=for-the-badge&logo=typescript)
 ![Firebase](https://img.shields.io/badge/Firebase-Firestore-FFCA28?style=for-the-badge&logo=firebase)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![License](https://img.shields.io/badge/License-GPL--3.0-blue?style=for-the-badge)
 
-**Notepad Online para Registro Rápido de Notas**
+**Notepad Online para Registro Rapido de Notas**
 
 *Crie, edite e compartilhe notas instantaneamente sem necessidade de login*
 
-[Demo](#demo) •
+[Overview](#overview) •
 [Funcionalidades](#funcionalidades) •
-[Instalação](#instalação) •
+[Instalacao](#instalacao) •
 [Como Usar](#como-usar) •
-[Tecnologias](#tecnologias)
+[Tecnologias](#tecnologias) •
+[Documentacao](#documentacao)
 
 </div>
 
@@ -23,16 +22,16 @@
 
 ## Overview
 
-Backs Note é um notepad online que permite criar e compartilhar notas de forma rápida e segura. Cada nota possui um ID único que pode ser compartilhado, ou você pode criar um alias com PIN para acesso facilitado.
+Backs Note e um notepad online que permite criar e compartilhar notas de forma rapida e segura. Cada nota possui um ID unico que pode ser compartilhado, ou voce pode criar um alias com PIN para acesso facilitado.
 
-**O que você obtém:**
-- **Notas Instantâneas** - Crie notas sem login ou cadastro
-- **Compartilhamento Fácil** - ID único de 10 caracteres para cada nota
-- **Aliases com PIN** - Nomes amigáveis protegidos por senha
-- **Editor Rich Text** - Formatação com negrito, itálico, listas
-- **Criptografia** - Conteúdo protegido com AES-256-GCM
-- **Multi-idioma** - Português, Inglês e Espanhol
-- **Sincronização** - Alterações salvas em tempo real
+**O que voce obtem:**
+- **Notas Instantaneas** - Crie notas sem login ou cadastro
+- **Compartilhamento Facil** - ID unico de 10 caracteres para cada nota
+- **Aliases com PIN** - Nomes amigaveis protegidos por senha
+- **Editor Rich Text** - Formatacao com negrito, italico, listas
+- **Criptografia** - Conteudo protegido com AES-256-GCM
+- **Multi-idioma** - Portugues, Ingles e Espanhol
+- **Sincronizacao** - Alteracoes salvas em tempo real
 
 ---
 
@@ -40,31 +39,31 @@ Backs Note é um notepad online que permite criar e compartilhar notas de forma 
 
 | Ambiente | URL |
 |----------|-----|
-| **Produção** | [backs-note.web.app](https://backs-note.web.app) |
+| **Producao** | [backs-note.web.app](https://backs-note.web.app) |
 | **GitHub Pages** | [johnpitter.github.io/backs-note](https://johnpitter.github.io/backs-note) |
 
 ---
 
 ## Funcionalidades
 
-| Funcionalidade | Descrição |
+| Funcionalidade | Descricao |
 |----------------|-----------|
-| **Notas com ID** | Cada nota recebe um ID único de 10 caracteres |
-| **Aliases** | Crie nomes amigáveis como "lista-compras" |
-| **PIN de Segurança** | Proteja aliases com PIN de 4-6 dígitos |
-| **Editor TipTap** | Rich text com formatação completa |
-| **Criptografia AES** | Conteúdo criptografado no servidor |
+| **Notas com ID** | Cada nota recebe um ID unico de 10 caracteres |
+| **Aliases** | Crie nomes amigaveis como "lista-compras" |
+| **PIN de Seguranca** | Proteja aliases com PIN de 4-6 digitos |
+| **Editor TipTap** | Rich text com formatacao completa |
+| **Criptografia AES** | Conteudo criptografado no servidor |
 | **Cache Local** | Acesso offline com cache de 24h |
 | **Tema Aurora** | Design glassmorphism moderno |
 | **SEO Completo** | Meta tags, Open Graph, JSON-LD |
 
 ---
 
-## Instalação
+## Instalacao
 
 ### Requisitos
 
-| Requisito | Versão |
+| Requisito | Versao |
 |-----------|--------|
 | Node.js | 20+ |
 | npm | 9+ |
@@ -73,27 +72,27 @@ Backs Note é um notepad online que permite criar e compartilhar notas de forma 
 ### Clone e Instale
 
 ```bash
-# Clone o repositório
+# Clone o repositorio
 git clone https://github.com/JohnPitter/backs-note.git
 cd backs-note
 
-# Instale as dependências
+# Instale as dependencias
 npm install
 
-# Configure as variáveis de ambiente
+# Configure as variaveis de ambiente
 cp .env.example .env.local
 # Edite .env.local com suas credenciais
 ```
 
-### Scripts Disponíveis
+### Scripts Disponiveis
 
-```bash
-npm run dev       # Servidor de desenvolvimento
-npm run build     # Build de produção
-npm run preview   # Preview do build
-npm run lint      # Verificação de tipos
-npm test          # Executar testes
-```
+| Comando | Descricao |
+|---------|-----------|
+| `npm run dev` | Servidor de desenvolvimento |
+| `npm run build` | Build de producao |
+| `npm run preview` | Preview do build |
+| `npm run lint` | Verificacao de tipos |
+| `npm test` | Executar testes |
 
 ---
 
@@ -101,16 +100,16 @@ npm test          # Executar testes
 
 ### Criar Nova Nota
 
-1. Acesse a página inicial
+1. Acesse a pagina inicial
 2. Clique em **"Criar Nova Nota"**
-3. Comece a digitar - as alterações são salvas automaticamente
+3. Comece a digitar - as alteracoes sao salvas automaticamente
 4. Copie o ID da nota para compartilhar
 
 ### Criar Alias com PIN
 
-1. Na página da nota, clique em **"Criar Alias"**
-2. Digite um nome amigável (ex: `minha-lista`)
-3. Defina um PIN de 4-6 dígitos
+1. Na pagina da nota, clique em **"Criar Alias"**
+2. Digite um nome amigavel (ex: `minha-lista`)
+3. Defina um PIN de 4-6 digitos
 4. Use o alias e PIN para acessar a nota facilmente
 
 ### Acessar Nota Existente
@@ -135,32 +134,43 @@ npm test          # Executar testes
 
 ---
 
-## Arquitetura
+## Documentacao
 
-```
-src/
-├── components/     # Componentes React reutilizáveis
-│   └── editor/     # Extensões do TipTap
-├── pages/          # Páginas (Home, NotePage)
-├── services/       # Firebase, Cache, Crypto, Alias
-├── hooks/          # Custom hooks (useNote, useAlias)
-├── utils/          # Utilitários (logger, idGenerator)
-├── types/          # Definições TypeScript
-└── i18n/           # Traduções (pt, en, es)
-```
+| Documento | Descricao |
+|-----------|-----------|
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Arquitetura do projeto |
+| [docs/USAGE.md](docs/USAGE.md) | Guia de uso detalhado |
+| [FIREBASE_SETUP.md](FIREBASE_SETUP.md) | Configuracao do Firebase |
+| [TROUBLESHOOTING.md](TROUBLESHOOTING.md) | Problemas comuns e solucoes |
+| [CHANGELOG.md](CHANGELOG.md) | Historico de alteracoes |
 
 ---
 
-## Licença
+## Licenca
 
-Este projeto está licenciado sob a [MIT License](LICENSE).
+Este projeto esta licenciado sob a [GPL-3.0 License](LICENSE).
+
+---
+
+## Contribuindo
+
+1. Fork o projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
+3. Commit suas mudancas (`git commit -m 'feat: adiciona nova feature'`)
+4. Push para a branch (`git push origin feature/nova-feature`)
+5. Abra um Pull Request
+
+---
+
+## Suporte
+
+- Abra uma [issue](https://github.com/JohnPitter/backs-note/issues) para reportar bugs
+- Use [discussions](https://github.com/JohnPitter/backs-note/discussions) para perguntas
 
 ---
 
 <div align="center">
 
-**[⬆ Voltar ao topo](#backs-note)**
-
-Feito com ❤️ por [John Pitter](https://github.com/JohnPitter)
+**[Voltar ao topo](#backs-note)**
 
 </div>
